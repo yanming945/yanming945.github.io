@@ -21,10 +21,12 @@
   <entry>
     <title>hexo的安装和主题的替换</title>
     <url>/2020/05/02/hexo%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%B8%BB%E9%A2%98%E7%9A%84%E6%9B%BF%E6%8D%A2/</url>
-    <content><![CDATA[<p>环境：</p>
-<p>​    OS：windows </p>
-<p>​    node.js</p>
-<p>​    Git</p>
+    <content><![CDATA[<h4><span id="环境">环境：</span></h4><p>​    <strong>OS：windows</strong> </p>
+<p>​    <strong>node.js</strong></p>
+<p>​    <strong>Git</strong></p>
+<p>​    <strong>H1</strong></p>
+<p>​    <strong>H2</strong></p>
+<p>​    <strong>H3</strong></p>
 <p>​    [<a href="https://hexo.io/zh-cn/docs/]" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/]</a>:</p>
 ]]></content>
   </entry>
