@@ -1,0 +1,467 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>photos | Hexo</title><meta name="description" content=".posts-expand .post-body img{         padding: 1px;     }      .footer{         display: none !important;     }       &#x2F;*不展示底部*&#x2F;      .footer-inner{          display: none !important;      }"><meta name="author" content="zym945"><meta name="copyright" content="zym945"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://hm.baidu.com"/><link rel="dns-prefetch" href="https://hm.baidu.com"/><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="crossorigin"/><link rel="dns-prefetch" href="https://fonts.googleapis.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="dns-prefetch" href="//busuanzi.ibruce.info"/><meta name="twitter:card" content="summary"><meta name="twitter:title" content="photos"><meta name="twitter:description" content=".posts-expand .post-body img{         padding: 1px;     }      .footer{         display: none !important;     }       &#x2F;*不展示底部*&#x2F;      .footer-inner{          display: none !important;      }"><meta name="twitter:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><meta property="og:type" content="website"><meta property="og:title" content="photos"><meta property="og:url" content="http://yoursite.com/photos/"><meta property="og:site_name" content="Hexo"><meta property="og:description" content=".posts-expand .post-body img{         padding: 1px;     }      .footer{         display: none !important;     }       &#x2F;*不展示底部*&#x2F;      .footer-inner{          display: none !important;      }"><meta property="og:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><meta property="article:published_time" content="2020-05-07T13:45:35.000Z"><meta property="article:modified_time" content="2020-05-07T14:02:30.717Z"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>var autoChangeMode = '1'
+var t = Cookies.get("theme")
+if (autoChangeMode == '1'){
+  var isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+  var isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+  var isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined){
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport){
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour < 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+  }
+  } else if (t == 'light') activateLightMode()
+  else activateDarkMode()
+
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
+
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="canonical" href="http://yoursite.com/photos/"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?86cd6f45883a133189576ebd09bcfa2e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://xxx/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  baiduPush: true,
+  highlightCopy: true,
+  highlightLang: true,
+  highlightShrink: 'false',
+  isFontAwesomeV5: false,
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+  
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: false,
+  isSidebar: false  
+  }</script><noscript><style>
+#page-header {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 4.2.0"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">3</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">2</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> About</span></a></div></div></div></div><div id="body-wrap"><div class="not-index-bg" id="nav" style="background-image: url(https://wx2.sbimg.cn/2020/05/05/fate_saber.jpg)"><div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">Hexo</a></span><span class="pull_right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fa fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> About</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span></span></div><div id="page_site-info"><h1 id="site_title">photos</h1></div></div><main class="layout_page" id="content-inner"><div id="page"><div id="article-container"><style type="text/css">
+    .posts-expand .post-body img{
+        padding: 1px;
+    }
+
+    .footer{
+        display: none !important;
+    }
+
+     /*不展示底部*/
+     .footer-inner{
+         display: none !important;
+     }
+
+    .v * {
+        color: #f4f4f4 !important;
+    }
+
+    .v .vwrap .vmark .valert .vcode {
+        background: #00050b !important;
+    }
+
+     /*不展示侧栏*/
+     .sidebar-toggle{
+         display: none !important;
+     }
+
+    /*修改相册页面内容宽度为全屏*/
+    .main-inner{
+        width: 100%;
+        margin-top: unset;
+    }
+
+    /*修改主体页面样式*/
+    .main {
+        padding-bottom: 150px;
+        margin-top: 0px;
+        background: #121212;
+    }
+
+    /*body体样式*/
+    body {
+        background-image: unset;
+        background-attachment: unset;
+        background-size: 100%;
+    }
+
+    .header{
+        background: rgba(28, 25, 25, 0.6);
+        border-bottom: unset;
+    }
+
+    .menu .menu-item a{
+        font-weight: 300;
+           color: #222;
+    }
+
+    .imgbox{
+      width: 100%;
+      overflow: hidden;
+      border-right: 0px solid #bcbcbc;
+    }
+
+    .box{
+        visibility: visible;
+        overflow: auto; 
+        zoom: 1;
+    }
+
+    .box li{
+        float: left;
+        width: 25%;  /*每个框占25%*/
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+        list-style: none;
+        margin: 0;
+        /*display: inline;*/
+        padding: 0;
+        height: 400px;   /*固定高度*/
+    }
+
+    .box li span{
+        display: block;
+        padding: 4% 7% 10% 7%;
+        min-height: 80px;
+        background: #fff;
+        color: #fff;
+        font-size: 16px;
+        background: #121212;
+        font-weight: 600;
+        line-height: 26px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    img.imgitem{
+        padding: unset;
+        padding: unset;
+        border: unset;
+        position: relative;
+        padding: 0px;
+        width: 100%;
+        height: 350px;
+    }
+
+    div#comments.comments.v {
+        border: 0px;
+        margin: auto !important;
+        margin-top: unset;
+        margin-left: unset;
+        margin-right: unset;
+        width: 60%;
+        padding-top: 50px;
+    }
+
+    div#posts.posts-expand {
+        border: unset;
+        padding: unset;
+        margin-bottom: 10px;
+    }
+
+    .valine .vlist .vcard .vcomment-body .vhead .vname{
+        color: #fff;
+    }
+
+    .valine .vlist .vcard .vcomment-body .text-wrapper .vcomment p{
+        color: #fff;
+    }
+
+    .box p{
+        display: block;
+        background: #121212;
+        color: #fff;
+        font-size: 12px;
+        font-family: 'SwisMedium';
+        text-align: center;
+    }
+
+    .box span strong{
+        background: rgba(0,0,0,0.4);
+        padding: 20px;
+        font-family: serif, sans-serif;
+    }
+
+    .posts-expand .post-title {
+        display: none;
+    }
+    .title{
+        display: inline-block;
+        vertical-align: middle;
+        font: 85px/250px 'ChaletComprimeMilanSixty';
+        background-position: left bottom !important;
+        color: #fff;
+        background-size: 100% auto !important; 
+        -webkit-background-size: cover; 
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        width: 100%;
+        text-align: center;
+        border: unset;
+        height: 580px;
+        cursor: unset !important;
+        -webkit-box-sizing: border-box;
+        /*box-sizing: border-box;*/
+    }
+    .btn-more-posts{
+        display: inline-block;
+        vertical-align: middle;
+        font: 85px/250px 'ChaletComprimeMilanSixty';
+        color: #000;
+        width: 100%;
+        text-align: center;
+        border: unset;
+        height: 400px;
+        background-color: #121212;
+        /*-webkit-box-sizing: border-box;*/
+        /*box-sizing: border-box;*/
+    }
+
+@media (max-width: 767px){
+    .box li {
+        width: 100%;
+        height: auto;
+    }
+    .title {
+        height: 200px;
+    }
+
+    .posts-expand .post-body img{
+        box-sizing: none;
+        padding: 0px !important;
+    }
+
+    .box span {
+        min-height: 80px;
+        border-right: unset;
+        font-size: 17px;
+    }
+    .box p{
+        border-right: unset;
+        font-size: 12px;
+    }
+
+    .posts-expand {
+        margin: unset;
+    }
+    div#comments.comments.v {
+        width: 96%;
+        padding-top: 50px;
+    }
+}
+
+@media (min-width: 1300px){
+    .container .main-inner{
+        width: 100%;
+    }
+}
+
+</style>
+
+<!-- 主体部分 -->
+<div id="box" class="box"></div>
+
+<script type="text/javascript">
+
+function loadXMLDoc(xmlUrl) 
+{
+    try //Internet Explorer
+    {
+        xmlDoc=new ActiveXObject("Microsoft.XMLDOM");
+    }
+    catch(e)
+    {
+      try //Firefox, Mozilla, Opera, etc.
+        {
+          xmlDoc=document.implementation.createDocument("","",null);
+        }
+      catch(e) {alert(e.message)}
+    }
+
+    try 
+    {
+          xmlDoc.async=false;
+          xmlDoc.load(xmlUrl);
+    }
+    catch(e) {
+        try //Google Chrome  
+          {  
+            var chromeXml = new XMLHttpRequest();
+            chromeXml.open("GET", xmlUrl, false);
+            chromeXml.send(null);
+            xmlDoc = chromeXml.responseXML.documentElement;                 
+            //alert(xmlDoc.childNodes[0].nodeName);
+            //return xmlDoc;    
+          }  
+          catch(e)  
+          {  
+              alert(e.message)  
+          }                
+    }
+    return xmlDoc; 
+}
+
+xmlDoc=loadXMLDoc("http://erd0w4.coding-pages.com/");
+
+var urls = xmlDoc.getElementsByTagName('Key');
+var date = xmlDoc.getElementsByTagName('LastModified');
+var wid = 350;
+var showNum = 21; //每个相册一次展示多少照片
+if ((window.innerWidth) > 1200) { wid = (window.innerWidth * 3) / 18;}
+var box = document.getElementById('box');
+var i = 0;
+
+var content = new Array();
+var tmp=0;
+var kkk=-1;
+for (var t = 0; t < urls.length ; t++) {
+    var bucket=urls[t].innerHTML;
+    var length=bucket.indexOf('/');
+    if(length===bucket.length-1){
+        kkk++;
+        content[kkk]=new Array();
+        content[kkk][0]={'url':bucket,'date':date[t].innerHTML.substring(0,10)};
+        tmp=1;
+    }
+    else {
+        content[kkk][tmp++]={'url':bucket.substring(length+1),'date':date[t].innerHTML.substring(0,10)};
+    }
+}
+
+for (var i = 0; i < content.length; i++) {
+    var conBox=document.createElement("div");
+    conBox.id='conBox'+i;
+    box.appendChild(conBox);
+    var item=document.createElement("div");
+    var title=content[i][0].url;
+    item.innerHTML="<button class=title style=background:url(http://erd0w4.coding-pages.com/" + title + "封面.jpg"+");background-repeat:no-repeat;><span style=display:inline;><strong style=color:#f0f3f6; >" + title.substring(0,title.length - 1) + "</strong></span></button>";
+    conBox.appendChild(item);
+
+        for (var j = 1; j < content[i].length && j < showNum+1; j++) {
+            var con=content[i][j].url;
+        var item=document.createElement("li");
+        if(con.substring(0,con.length-4) != "封面"){
+            item.innerHTML="<div class=imgbox id=imgbox style=height:"+wid+"px;><img class=imgitem src=http://erd0w4.coding-pages.com/" + title + con +" alt=" + con + "></div><span>" + con.substring(0,con.length-4);
+            conBox.appendChild(item);
+        }
+    }
+    if(content[i].length > showNum){
+        var moreItem=document.createElement("button");
+        moreItem.className = "btn-more-posts";
+        moreItem.id = "more" + i;
+        moreItem.value = showNum + 1;
+        let cur = i;
+        moreItem.onclick = function (){
+            moreClick(this,cur,content[cur],content[cur][0].url);
+        }
+        moreItem.innerHTML="<span style=display:inline;><strong style=color:#f0f3f6;>加载更多</strong></span>";
+        conBox.appendChild(moreItem);
+    }
+}
+
+function moreClick(obj,cur,cont,title){
+    var parent = obj.parentNode;
+    parent.removeChild(obj);
+    var j=obj.value;
+    var begin=j;
+    for ( ; j < cont.length && j < Number(showNum) + Number(begin); j++) {
+        var con=cont[j].url;
+        var item=document.createElement("li");
+        item.innerHTML="<div class=imgbox id=imgbox style=height:"+wid+"px;><img class=imgitem src=http://erd0w4.coding-pages.com/"+title+con+" alt="+con+"></div><span>"+con.substring(0,con.length-4);
+        parent.appendChild(item);
+        var v=item.getElementsByTagName('img');
+        v[0].id=imgid;
+        imgid++;
+    }
+    if(cont.length > j){
+        obj.value=j;
+        parent.appendChild(obj);
+    }
+}
+</script></div><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 评论</span></div><div class="vcomment" id="vcomment"></div><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var requestSetting = function (from,set) {
+  var from = from
+  var setting = set.split(',').filter(function(item){
+  return from.indexOf(item) > -1
+  });
+  setting = setting.length == 0 ? from :setting;
+  return setting
+}
+
+var guestInfo = requestSetting(['nick','mail','link'],'nick,mail,link')
+var requiredFields = requestSetting(['nick','mail','link'],'nick,mail')
+
+window.valine = new Valine({
+  el:'#vcomment',
+  appId: 'itYtz0wTg5YfkWU4pt37xsGw-gzGzoHsz',
+  appKey: 'z0Dhm2o13W3Szf7cUgLlIdSN',
+  notify: false,
+  verify: false,
+  placeholder: 'Please leave your footprints',
+  avatar: 'monsterid',
+  meta: guestInfo,
+  pageSize: '10',
+  lang: 'en',
+  recordIP: false,
+  serverURLs: '',
+  emojiCDN: '',
+  emojiMaps: "",
+  enableQQ: false,
+  requiredFields: requiredFields
+});</script></div></div><div class="aside_content" id="aside_content"><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fa fa-folder-open" aria-hidden="true"></i><span>分类</span></div><ul class="card-category-list">
+            <li class="card-category-list-item"><a class="card-category-list-link" href="/categories/DELL/"><span class="card-category-list-name">DELL</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item"><a class="card-category-list-link" href="/categories/hexo/"><span class="card-category-list-name">hexo</span><span class="card-category-list-count">2</span></a></li>
+                       
+            </ul></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fa fa-archive" aria-hidden="true"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/05/"><span class="card-archive-list-date">五月 2020</span><span class="card-archive-list-count">3</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fa fa-line-chart" aria-hidden="true"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-article-name">文章数目 :</div><div class="webinfo-article-count">3</div></div><div class="webinfo-item"><div class="webinfo-runtime-name">已运行时间 :</div><div class="webinfo-runtime-count" id="webinfo-runtime-count" start_date="1/5/2020 00:00:00">     </div></div><div class="webinfo-item">      <div class="webinfo-site-uv-name">本站访客数 :</div><div class="webinfo-site-uv-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="webinfo-site-name">本站总访问量 :</div><div class="webinfo-site-pv-count" id="busuanzi_value_site_pv"></div></div></div></div></div></div></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020 By zym945</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div><div class="footer_custom_text"><a href="https://pages.coding.me" target="_blank" rel="noopener">Coding Pages</a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="简繁转换" target="_self">繁</a><i class="darkmode fa fa-moon-o" id="darkmode" title="夜间模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="设置"><i class="fa fa-cog" aria-hidden="true"></i></div><i class="fa fa-arrow-up" id="go-up" title="回到顶部" aria-hidden="true"></i></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="/js/search/local-search.js"></script></body></html>
