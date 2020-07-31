@@ -94,5 +94,8 @@
     <url>/2020/08/01/%E8%8E%B7%E5%8F%96%E7%B3%BB%E7%BB%9F%E5%AF%86%E9%92%A5%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<p>操作步骤</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1.  按Windows 徽标键 + R，弹出搜索框，输入powershell,找到Windows PowerShell，右键点击，点击以管理员身份运行它</span><br><span class="line"></span><br><span class="line">2.  复制这串代码  (Get-WmiObject -query &#39;select * from SoftwareLicensingService&#39;)              </span><br><span class="line"></span><br><span class="line">3.  在powershell窗口中，鼠标右键点击即可粘贴上，然后回车一下</span><br><span class="line"></span><br><span class="line">4.  等待几秒后，会显示出OEM的产品密钥出来</span><br><span class="line"></span><br><span class="line">5.  找到这个：OA3xOriginalProductKey：后面的25位就是OEM的产品密钥 </span><br><span class="line"></span><br><span class="line">6． 重新激活</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
   </entry>
 </search>
