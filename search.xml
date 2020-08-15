@@ -100,7 +100,7 @@
   <entry>
     <title>DjangoBlog部署教程</title>
     <url>/2020/08/15/DjangoBlog%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<p>本篇文章将会教你如何部署DjangoBlog项目。<br>请仔细阅读，并和自己的环境做对比。</p>
+    <content><![CDATA[<p><img src="https://wx2.sbimg.cn/2020/08/15/39cem.jpg" alt><br>本篇文章将会教你如何部署DjangoBlog项目。<br>请仔细阅读，并和自己的环境做对比。</p>
 <div class="note info">
             <p>DjangoBlog 开源项目下载：<br><a href="https://gitee.com/lylinux/DjangoBlog" target="_blank" rel="noopener">https://gitee.com/lylinux/DjangoBlog</a></p>
           </div>
