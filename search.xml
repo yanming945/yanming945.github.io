@@ -86,16 +86,106 @@
 <p>可以在虚拟机上自行测试，在物理机上测试，请备份好自己数据。</p>
 ]]></content>
       <categories>
-        <category>windows</category>
+        <category>Windows</category>
       </categories>
   </entry>
   <entry>
     <title>获取系统密钥方法</title>
     <url>/2020/08/01/%E8%8E%B7%E5%8F%96%E7%B3%BB%E7%BB%9F%E5%AF%86%E9%92%A5%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<p>操作步骤</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1.  按Windows 徽标键 + R，弹出搜索框，输入powershell,找到Windows PowerShell，右键点击，点击以管理员身份运行它</span><br><span class="line"></span><br><span class="line">2.  复制这串代码  (Get-WmiObject -query &#39;select * from SoftwareLicensingService&#39;)              </span><br><span class="line"></span><br><span class="line">3.  在powershell窗口中，鼠标右键点击即可粘贴上，然后回车一下</span><br><span class="line"></span><br><span class="line">4.  等待几秒后，会显示出OEM的产品密钥出来</span><br><span class="line"></span><br><span class="line">5.  找到这个：OA3xOriginalProductKey：后面的25位就是OEM的产品密钥 </span><br><span class="line"></span><br><span class="line">6． 重新激活</span><br></pre></td></tr></table></figure>]]></content>
+    <content><![CDATA[<h3><span id="操作步骤">操作步骤</span></h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1.  按Windows 徽标键 + R，弹出搜索框，输入powershell,找到Windows PowerShell，右键点击，点击以管理员身份运行它</span><br><span class="line"></span><br><span class="line">2.  复制这串代码  (Get-WmiObject -query &#39;select * from SoftwareLicensingService&#39;)              </span><br><span class="line"></span><br><span class="line">3.  在powershell窗口中，鼠标右键点击即可粘贴上，然后回车一下</span><br><span class="line"></span><br><span class="line">4.  等待几秒后，会显示出OEM的产品密钥出来</span><br><span class="line"></span><br><span class="line">5.  找到这个：OA3xOriginalProductKey：后面的25位就是OEM的产品密钥 </span><br><span class="line"></span><br><span class="line">6． 重新激活</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Windows</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>DjangoBlog部署教程</title>
+    <url>/2020/08/15/DjangoBlog%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<p>本篇文章将会教你如何部署DjangoBlog项目。<br>请仔细阅读，并和自己的环境做对比。</p>
+<div class="note info">
+            <p>DjangoBlog 开源项目下载：<br><a href="https://gitee.com/lylinux/DjangoBlog" target="_blank" rel="noopener">https://gitee.com/lylinux/DjangoBlog</a></p>
+          </div>
+
+<h3><span id="环境">环境</span></h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* 系统是Debian 10</span><br><span class="line">* 本地使用：使用虚拟机，使用的IP 地址。</span><br><span class="line">* python虚拟环境目录在 ~&#x2F;python&#x2F;env</span><br><span class="line">* djangoblog源码位置在 ~&#x2F;python&#x2F;DjangoBlog</span><br><span class="line">* 系统的用户是Server</span><br><span class="line">* 编辑器使用vim，你可以使用你喜欢的编辑器。</span><br></pre></td></tr></table></figure>
+<div class="note info">
+            <p>可以使用VmWare虚拟机进行实验</p>
+          </div>
+
+<h3><span id="准备工作">准备工作</span></h3><h3><span id="升级系统">升级系统</span></h3><p>首先升级系统到最新版，以Root的账户下的终端下执行：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">apt-get update</span><br><span class="line">apt-get upgrade</span><br></pre></td></tr></table></figure>
+<p>系统更新之后，重启下系统，终端下执行：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure>
+<p>重启之后，可以开始安装Myslq及Python环境。</p>
+<h3><span id="安装mysql的准备">安装Mysql的准备</span></h3><p>要将 MySQL APT 存储库添加到系统，请转到存储库<a href="https://dev.mysql.com/downloads/repo/apt/" target="_blank" rel="noopener" title="下载页面">下载页面</a>并使用以下 wget 命令下载最新的发行包：<br>终端下执行：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget http:&#x2F;&#x2F;repo.mysql.com&#x2F;mysql-apt-config_0.8.13-1_all.deb</span><br></pre></td></tr></table></figure>
+<p>下载完成后，以root 的用户执行安装发行:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">apt-get insatll install .&#x2F;mysql-apt-config_0.8.13-1_all.deb -y</span><br></pre></td></tr></table></figure>
+<p>您将看到配置菜单，您可以从中选择要安装的 MySQL 版本。<br>本篇使用的MySQL 8.0<br>要安装 MySQL 8.0 版。按 Tab 并选择 OK 最后按下 Enter。</p>
+<h3><span id="安装mysql">安装MySQL</span></h3><p>通过运行以下命令更新包列表并安装 MySQL 服务器包：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">apt-get update</span><br><span class="line">apt-get install mysql-server -y</span><br></pre></td></tr></table></figure>
+<p>安装程序将要求您设置 MySQL root 密码。记录设置的密码，后面会用的到。<br>安装完成后， MySQL 服务将自动启动，您可以通过键入以下内容来验证它：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl status mysql</span><br></pre></td></tr></table></figure>
+<p>输出的结果：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">● mysql.service - MySQL Community Server</span><br><span class="line">   Loaded: loaded (&#x2F;lib&#x2F;systemd&#x2F;system&#x2F;mysql.service; enabled; vendor preset: enabled)</span><br><span class="line">   Active: active (running) since Sat 2020-08-15 11:32:25 CST; 10h ago</span><br><span class="line">     Docs: man:mysqld(8)</span><br><span class="line">           http:&#x2F;&#x2F;dev.mysql.com&#x2F;doc&#x2F;refman&#x2F;en&#x2F;using-systemd.html</span><br><span class="line">  Process: 391 ExecStartPre&#x3D;&#x2F;usr&#x2F;share&#x2F;mysql-8.0&#x2F;mysql-systemd-start pre (code&#x3D;exited, status&#x3D;0&#x2F;SUCCESS)</span><br><span class="line"> Main PID: 447 (mysqld)</span><br><span class="line">   Status: &quot;Server is operational&quot;</span><br><span class="line">    Tasks: 39 (limit: 2934)</span><br><span class="line">   Memory: 462.4M</span><br><span class="line">   CGroup: &#x2F;system.slice&#x2F;mysql.service</span><br><span class="line">           └─447 &#x2F;usr&#x2F;sbin&#x2F;mysqld</span><br><span class="line"></span><br><span class="line">Aug 15 11:31:58 debian10-ming systemd[1]: Starting MySQL Community Server...</span><br><span class="line">Aug 15 11:32:25 debian10-ming systemd[1]: Started MySQL Community Server.</span><br></pre></td></tr></table></figure>
+<h3><span id="安装django的环境">安装Django的环境</span></h3><p>终端下运行：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">apt-get install python3-dev python3-pip python-pip memcached -y</span><br><span class="line">apt-get install supervisor -y</span><br><span class="line">apt-get install nginx -y</span><br><span class="line">apt-get install python-dev default-libmysqlclient-dev</span><br></pre></td></tr></table></figure>
+<p>接下来需要设置python的虚拟环境<br>设置Python的虚拟环境，配置如下：<br>安装虚拟环境</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pip install virtualenvwrapper -i https:&#x2F;&#x2F;pypi.tuna.tsinghua.edu.cn&#x2F;simple</span><br></pre></td></tr></table></figure>
+<div class="note info">
+            <p>让PIP源使用国内镜像，提升下载速度和安装成功率<br>临时使用：<br>可以在使用pip的时候加参数-i <a href="https://pypi.tuna.tsinghua.edu.cn/simple" target="_blank" rel="noopener">https://pypi.tuna.tsinghua.edu.cn/simple</a><br>例如：pip install virtualenvwrapper -i <a href="https://pypi.tuna.tsinghua.edu.cn/simple" target="_blank" rel="noopener">https://pypi.tuna.tsinghua.edu.cn/simple</a></p>
+          </div>
+
+
+<p>创建放虚拟环境的文件夹，终端下执行：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir -p python&#x2F;env &amp;&amp; cd python&#x2F;env</span><br></pre></td></tr></table></figure>
+<p>终端下执行</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nano ~&#x2F;.bashrc</span><br></pre></td></tr></table></figure>
+<p>安装完成后，在~/.bashrc写入以下内容</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">export WORKON_HOME&#x3D;&#x2F;home&#x2F;server&#x2F;python&#x2F;env</span><br><span class="line">source &#x2F;usr&#x2F;local&#x2F;bin&#x2F;virtualenvwrapper.sh</span><br></pre></td></tr></table></figure>
+<div class="note info">
+            <p>第一行：virtualenvwrapper存放虚拟环境目录<br>第二行：virtrualenvwrapper会安装到python的bin目录下，所以该路径是python安装目录下bin/virtualenvwrapper.sh</p>
+          </div>
+<p>读入配置文件，立即生效，终端下执行</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">source ~&#x2F;.bashrc</span><br><span class="line">virtualenv -p &#x2F;usr&#x2F;bin&#x2F;python3 djangoblog</span><br><span class="line">workon djangoblog</span><br></pre></td></tr></table></figure>
+<p>这样就完成了Python虚拟环境的设置。</p>
+<p>下面开始安装djangoblog运行所需要的依赖，终端下执行：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd ~&#x2F;python&#x2F;DjangoBlog</span><br><span class="line">pip install -Ur requirements.txt -i https:&#x2F;&#x2F;pypi.tuna.tsinghua.edu.cn&#x2F;simple</span><br></pre></td></tr></table></figure>
+<h3><span id="基本配置及部署">基本配置及部署</span></h3><h3><span id="配置mysql数据库">配置mysql数据库</span></h3><p>使用root用户登录,这时候就是安装mysql 的时候配置的密码。终端下执行：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mysql -uroot -p</span><br><span class="line">CREATE USER &#39;djangoblog&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;DjAnGoBlOg123!@#&#39;;</span><br><span class="line">CREATE DATABASE &#96;djangoblog&#96; &#x2F;*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci *&#x2F;;</span><br><span class="line">GRANT all ON djangoblog.* TO &#39;djangoblog&#39;@&#39;localhost&#39;;</span><br><span class="line">FLUSH PRIVILEGES;</span><br><span class="line">exit #退出</span><br></pre></td></tr></table></figure>
+<p>同样，这里的DjAnGoBlOg123!@#密码也要改成你自己的密码。</p>
+<h3><span id="修改djangoblog配置">修改djangoblog配置</span></h3><p>修改DjangoBlog/DjangoBlog/settings.py中的DATABASES配置，如下所示，当然，你也可以将其中的配置写入你的.bashrc中，这样就不需要改这个文件了，我这里只是介绍下如何修改：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">DATABASES &#x3D; &#123;</span><br><span class="line">    &#39;default&#39;: &#123;</span><br><span class="line">        &#39;ENGINE&#39;: &#39;django.db.backends.mysql&#39;,</span><br><span class="line">        &#39;NAME&#39;: &#39;djangoblog&#39;,</span><br><span class="line">        &#39;USER&#39;: &#39;djangoblog&#39;,</span><br><span class="line">        &#39;PASSWORD&#39;: &#39;DjAnGoBlOg123!@#&#39;,</span><br><span class="line">        &#39;HOST&#39;: &#39;localhost&#39;,</span><br><span class="line">        &#39;PORT&#39;: 3306,</span><br><span class="line">        &#39;OPTIONS&#39;: &#123;&#39;charset&#39;: &#39;utf8mb4&#39;&#125;,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>接下来开始执行数据库迁移，终端下执行：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.&#x2F;manage.py makemigrations</span><br><span class="line">.&#x2F;manage.py migrate</span><br><span class="line">.&#x2F;manage.py createsuperuser #创建超级用户</span><br><span class="line">.&#x2F;manage.py collectstatic --no-input</span><br><span class="line">.&#x2F;manage.py compress --force</span><br></pre></td></tr></table></figure>
+<h3><span id="gunicorn-配置">gunicorn 配置</span></h3><p>安装，终端下执行:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">source &#x2F;home&#x2F;server&#x2F;python&#x2F;env&#x2F;djangoblog&#x2F;bin&#x2F;activate</span><br><span class="line">pip install gunicorn -i https:&#x2F;&#x2F;pypi.tuna.tsinghua.edu.cn&#x2F;simple</span><br></pre></td></tr></table></figure>
+<p>配置，终端下执行：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nano &#x2F;home&#x2F;server&#x2F;python&#x2F;gunicorn_start.sh</span><br></pre></td></tr></table></figure>
+<p>贴入如下内容:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line"></span><br><span class="line">NAME&#x3D;&quot;DjangoBlog&quot;</span><br><span class="line">DJANGODIR&#x3D;&#x2F;home&#x2F;server&#x2F;python&#x2F;DjangoBlog #Django project directory</span><br><span class="line">USER&#x3D;server # the user to run as</span><br><span class="line">GROUP&#x3D;server # the group to run as</span><br><span class="line">NUM_WORKERS&#x3D;1 # how many worker processes should Gunicorn spawn</span><br><span class="line">DJANGO_SETTINGS_MODULE&#x3D;DjangoBlog.settings # which settings file should Django use</span><br><span class="line">DJANGO_WSGI_MODULE&#x3D;DjangoBlog.wsgi # WSGI module name</span><br><span class="line"></span><br><span class="line">echo &quot;Starting $NAME as &#96;whoami&#96;&quot;</span><br><span class="line"></span><br><span class="line"># Activate the virtual environment</span><br><span class="line">cd $DJANGODIR</span><br><span class="line">source &#x2F;home&#x2F;server&#x2F;python&#x2F;env&#x2F;djangoblog&#x2F;bin&#x2F;activate</span><br><span class="line">export DJANGO_SETTINGS_MODULE&#x3D;$DJANGO_SETTINGS_MODULE</span><br><span class="line">export PYTHONPATH&#x3D;$DJANGODIR:$PYTHONPATH</span><br><span class="line"></span><br><span class="line"># Create the run directory if it doesn&#39;t exist</span><br><span class="line">RUNDIR&#x3D;$(dirname $SOCKFILE)</span><br><span class="line">test -d $RUNDIR || mkdir -p $RUNDIR</span><br><span class="line"></span><br><span class="line"># Start your Django Unicorn</span><br><span class="line"># Programs meant to be run under supervisor should not daemonize themselves (do not use --daemon)</span><br><span class="line">exec &#x2F;home&#x2F;server&#x2F;python&#x2F;env&#x2F;djangoblog&#x2F;bin&#x2F;gunicorn  $&#123;DJANGO_WSGI_MODULE&#125;:application \</span><br><span class="line">--name $NAME \</span><br><span class="line">--workers $NUM_WORKERS \</span><br><span class="line">--user&#x3D;$USER --group&#x3D;$GROUP \</span><br><span class="line">--log-level&#x3D;debug \</span><br><span class="line">--log-file&#x3D;-</span><br></pre></td></tr></table></figure>
+<div class="note info">
+            <p>注意，将该文件中的server修改成你自己的用户</p>
+          </div>
+<p>增加可执行权限：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">chmod 755 gunicorn_start.sh</span><br><span class="line">.&#x2F;gunicorn_start.sh</span><br></pre></td></tr></table></figure>
+<h3><span id="nginx配置">nginx配置</span></h3><p>终端下执行：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 删除默认配置</span><br><span class="line">rm &#x2F;etc&#x2F;nginx&#x2F;sites-enabled&#x2F;default</span><br><span class="line">nano &#x2F;etc&#x2F;nginx&#x2F;sites-enabled&#x2F;djangoblog.com.conf</span><br></pre></td></tr></table></figure>
+<p>贴入如下内容：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">server &#123;</span><br><span class="line"></span><br><span class="line">    listen 80;</span><br><span class="line">    server_name 192.168.1.100;</span><br><span class="line">    root &#x2F;home&#x2F;server&#x2F;python&#x2F;DjangoBlog&#x2F;;</span><br><span class="line"></span><br><span class="line">    access_log &#x2F;var&#x2F;log&#x2F;nginx&#x2F;django_access.log;</span><br><span class="line">    error_log &#x2F;var&#x2F;log&#x2F;nginx&#x2F;django_error.log;</span><br><span class="line"></span><br><span class="line">    location &#x2F;static&#x2F; &#123;</span><br><span class="line">        alias &#x2F;home&#x2F;server&#x2F;python&#x2F;&#x2F;DjangoBlog&#x2F;collectedstatic&#x2F;;</span><br><span class="line">        expires max;</span><br><span class="line">        access_log        off;</span><br><span class="line">        log_not_found     off;</span><br><span class="line">    &#125;</span><br><span class="line">    location &#x2F;media &#123;</span><br><span class="line">        # 静态文件配置</span><br><span class="line">        alias &#x2F;home&#x2F;server&#x2F;python&#x2F;DjangoBlog&#x2F;uploads&#x2F;;</span><br><span class="line">        expires max;</span><br><span class="line">    &#125;</span><br><span class="line">    location ~ \.py$ &#123;</span><br><span class="line">        return 403;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    location &#x2F; &#123;</span><br><span class="line">        proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">        proxy_set_header Host $http_host;</span><br><span class="line">        proxy_set_header X-NginX-Proxy true;</span><br><span class="line">        proxy_redirect off;</span><br><span class="line">        if (!-f $request_filename) &#123;</span><br><span class="line">            proxy_pass http:&#x2F;&#x2F;127.0.0.1:8000;</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<div class="note info">
+            <p>server_name 192.168.1.100;<br>这是你自己的服务器的IP地址。</p>
+          </div>
+<p>保存并退出。重启nginx:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;etc&#x2F;init.d&#x2F;nginx restart</span><br></pre></td></tr></table></figure>
+<h3><span id="配置supervisor">配置Supervisor</span></h3><p>终端下执行:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nano &#x2F;etc&#x2F;supervisor&#x2F;conf.d&#x2F;djangoblog.conf</span><br></pre></td></tr></table></figure>
+<p>贴入如下内容：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[program:djangoblog]</span><br><span class="line">command &#x3D; &#x2F;home&#x2F;server&#x2F;python&#x2F;gunicorn_start.sh</span><br><span class="line">user &#x3D; server</span><br><span class="line">autostart&#x3D;true</span><br><span class="line">autorestart&#x3D;true</span><br><span class="line"></span><br><span class="line">redirect_stderr &#x3D; true</span><br><span class="line">stdout_logfile &#x3D; &#x2F;var&#x2F;log&#x2F;djangoblog.log</span><br><span class="line">stderr_logfile&#x3D;&#x2F;var&#x2F;log&#x2F;djangoblog.err</span><br></pre></td></tr></table></figure>
+<p>同样，需要将server修改成你自己等用户名. 保存成功后继续执行:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">supervisorctl update</span><br><span class="line">supervisorctl reload </span><br><span class="line">&#x2F;etc&#x2F;init.d&#x2F;memcached restart &amp;&amp; &#x2F;etc&#x2F;init.d&#x2F;nginx restart</span><br></pre></td></tr></table></figure>
+<p>至此，全部完成。你可以通过你的浏览器访问你的服务器IP地址</p>
+]]></content>
+      <categories>
+        <category>DjangoBlog</category>
       </categories>
   </entry>
 </search>
