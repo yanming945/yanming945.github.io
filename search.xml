@@ -188,4 +188,16 @@
         <category>DjangoBlog</category>
       </categories>
   </entry>
+  <entry>
+    <title>电脑没声音怎么办？</title>
+    <url>/2020/09/26/%E7%94%B5%E8%84%91%E6%B2%A1%E5%A3%B0%E9%9F%B3%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F/</url>
+    <content><![CDATA[<p>首先是系统环境是适用windows 10<br>只要硬件没故障，不说百分百能解决，但是百分之七八十是可以的<br>以下是操作方案：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1.点击桌面最左下角的win菜单按钮，右键选择设备管理器 </span><br><span class="line"></span><br><span class="line">2.进入设备管理器后选择声音，视频和游戏控制器 </span><br><span class="line"></span><br><span class="line">3.选择realtek，右键更新驱动程序 </span><br><span class="line"></span><br><span class="line">4.选择浏览我的计算机以查找驱动程序软件 </span><br><span class="line"></span><br><span class="line">5.选择让我从计算机上的可用驱动程序列表中选取 </span><br><span class="line"></span><br><span class="line">6.选择high definition Audio设备进行安装即可。</span><br></pre></td></tr></table></figure>
+
+
+]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
+  </entry>
 </search>
