@@ -135,7 +135,7 @@
 
 ]]></content>
       <categories>
-        <category>Windows</category>
+        <category>Win</category>
       </categories>
   </entry>
   <entry>
@@ -155,11 +155,6 @@
       <categories>
         <category>Windows</category>
       </categories>
-  </entry>
-  <entry>
-    <title>禁用windwos Update</title>
-    <url>/2020/10/05/%E7%A6%81%E7%94%A8windwos%20Update/</url>
-    <content><![CDATA[<h3><span id="禁用windwos-update">禁用windwos Update</span></h3>]]></content>
   </entry>
   <entry>
     <title>获取系统密钥方法</title>
