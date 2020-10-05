@@ -1,63 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/05/02/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2><span id="quick-start">Quick Start</span></h2><h3><span id="create-a-new-post">Create a new post</span></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3><span id="run-server">Run server</span></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3><span id="generate-static-files">Generate static files</span></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3><span id="deploy-to-remote-sites">Deploy to remote sites</span></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>hexo的安装和主题的替换</title>
-    <url>/2020/05/02/hexo%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%B8%BB%E9%A2%98%E7%9A%84%E6%9B%BF%E6%8D%A2/</url>
-    <content><![CDATA[<h3><span id="环境">环境</span></h3><p>  OS：windows 10<br>  node.js<br>  Git</p>
-<h3><span id="准备工作">准备工作</span></h3><p>安装node.js<br>安装Git<br><a href="https://hexo.io/zh-cn/docs" target="_blank" rel="noopener" title="官网链接">Hexo官网</a><br><a href="https://jingyan.baidu.com/article/d8072ac47aca0fec95cefd2d.html" target="_blank" rel="noopener">参考</a></p>
-<h3><span id="验证nodejs是否成功">验证node.js是否成功</span></h3><p>  以下命令可以验证，输入命令后，输出版本号即安装成功</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#npm -v</span></span><br><span class="line">6.13.4</span><br></pre></td></tr></table></figure>
-<div class="note info">
-            <p>info 设置npm 国内源，不然默认的是国外源，影响下载，体验不好。<br>在cmd 下，输入命令：</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm config set registry &quot;https:&#x2F;&#x2F;registry.npm.taobao.org&quot;</span><br></pre></td></tr></table></figure>
-          </div>
-
-<h3><span id="hexo的安装">Hexo的安装</span></h3><h4><span id="安装">安装</span></h4><p>终端执行命令</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli </span><br><span class="line">npm install -g hexo  //-g：global 全局安装</span><br></pre></td></tr></table></figure>
-<h4><span id="初始化">初始化</span></h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init blot //bolg 可以修改你想要的博客名字</span><br><span class="line"><span class="built_in">cd</span> blog  //切换路径，进入blog 文件夹内</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
-<p>开启hexo 服务器，执行命令</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo s</span><br><span class="line">以下是运行成功后的结果：</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
-<p>在游览器打开： <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a><br>停止服务器运行，按照提示，组合键：Ctrl+C。<br>运行成功后，在游览器会显示hexo 默认的主题landscape。</p>
-<h3><span id="更换主题">更换主题</span></h3><p>hexo 默认的主题是landscape，主题可以自定义。<br>到<a href="https://hexo.io/themes/" target="_blank" rel="noopener" title="主题官网">主题官网</a>上自行选择中意的主题。<br>这里选择的是<a href="https://jerryc.me/posts/21cfbf15/" target="_blank" rel="noopener" title="这里选择的是butterfly。">butterfly</a>。</p>
-<h4><span id="下载主题">下载主题</span></h4><p>到blog的主目录下。执行下面的命令</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone -b master https:&#x2F;&#x2F;github.com&#x2F;jerryc127&#x2F;hexo-theme-butterfly.git themes&#x2F;Butterfly</span><br></pre></td></tr></table></figure>
-<p>运行后，会在blog/themes下多出一个Butterfly的文件夹。</p>
-<h4><span id="应用主题">应用主题</span></h4><p>在blog的目录下找到配置文件_config.yml，<br>在文件中找到theme: landscape  修改后，theme: Butterfly。<br>这样就主题应用完成</p>
-<div class="note info">
-            <p>info 运行服务器之前，需要安装一个插件，不安装的话，会报错。</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-renderer-pug hexo-renderer-stylus</span><br></pre></td></tr></table></figure>
-          </div>
-
-<p>接下来运行服务器。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-
-<p><a href="https://yanming945.github.io/" target="_blank" rel="noopener" title="查看效果">查看效果</a></p>
-<p>​</p>
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Dell_OS_Recovery_Tool 教程</title>
     <url>/2020/05/08/Dell-OS-Recovery-Tool/</url>
     <content><![CDATA[<h3><span id="准备工作">准备工作</span></h3><p>准备一个16G 的U盘，U盘的<font color="#FF0000">数据备份好</font><br>下载工具：<a href="https://dl.dell.com/FOLDER06054282M/1/Dell-USB-Recovery-Tool_9R9DC_WIN_2.3.6094.0_A00.EXE" target="_blank" rel="noopener">下载链接</a><br>下载路径可以选择桌面，这样比较好找。<br>下载后找到执行程序，程序的名字：Dell-USB-Recovery-Tool_9R9DC_WIN_2.3.6094.0_A00.exe<br>如图1：<br><img src="https://wx1.sbimg.cn/2020/05/08/e63f449d270f448177d4cc542d7c43e3.png" alt="avatar"><br>鼠标双击安装后出现图2<br><img src="https://wx1.sbimg.cn/2020/05/08/50c738042445725ac83b181d9767c0dd.png" alt><br>安装结束后出现图3<br><img src="https://wx2.sbimg.cn/2020/05/08/d0a5b3c475d5491b631eb69be7666126.png" alt><br>在桌面上出现程序的图标<br><img src="https://wx2.sbimg.cn/2020/05/08/3fa854a280764d4c249741a0a02cfbda.png" alt><br>这样工具就安装完成。</p>
@@ -69,32 +12,6 @@
 ]]></content>
       <categories>
         <category>DELL</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Windows UEFI 和 Legacy 的分区</title>
-    <url>/2020/05/10/windwos_UEFI%E5%92%8CLegacy%E5%88%86%E5%8C%BA/</url>
-    <content><![CDATA[<h3><span id="uefi-和-legacy-的分区区别">UEFI 和 Legacy 的分区区别</span></h3><p>以下都是以一个硬盘，选择新建后自动生成的分区。</p>
-<blockquote>
-<h4><span id="uefi">UEFI</span></h4><p><img src="https://s1.ax1x.com/2020/05/10/Y1gnAI.png" alt></p>
-</blockquote>
-<blockquote>
-<h4><span id="legacy">Legacy</span></h4><p><img src="https://s1.ax1x.com/2020/05/10/Y1guNt.png" alt></p>
-</blockquote>
-<p>机器的引导模式是UEFI<br>若在Legacy下生成那种分区，安装完系统后则会出现No Boot的提示。如下图：<br><img src="https://s1.ax1x.com/2020/05/10/Y1RR1K.png" alt></p>
-<p>不同机器会有不同的提示。</p>
-<p>可以在虚拟机上自行测试，在物理机上测试，请备份好自己数据。</p>
-]]></content>
-      <categories>
-        <category>Windows</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>获取系统密钥方法</title>
-    <url>/2020/08/01/%E8%8E%B7%E5%8F%96%E7%B3%BB%E7%BB%9F%E5%AF%86%E9%92%A5%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<h3><span id="操作步骤">操作步骤</span></h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1.  按Windows 徽标键 + R，弹出搜索框，输入powershell,找到Windows PowerShell，右键点击，点击以管理员身份运行它</span><br><span class="line"></span><br><span class="line">2.  复制这串代码  (Get-WmiObject -query &#39;select * from SoftwareLicensingService&#39;)              </span><br><span class="line"></span><br><span class="line">3.  在powershell窗口中，鼠标右键点击即可粘贴上，然后回车一下</span><br><span class="line"></span><br><span class="line">4.  等待几秒后，会显示出OEM的产品密钥出来</span><br><span class="line"></span><br><span class="line">5.  找到这个：OA3xOriginalProductKey：后面的25位就是OEM的产品密钥 </span><br><span class="line"></span><br><span class="line">6． 重新激活</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Windows</category>
       </categories>
   </entry>
   <entry>
@@ -189,6 +106,27 @@
       </categories>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2020/05/02/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2><span id="quick-start">Quick Start</span></h2><h3><span id="create-a-new-post">Create a new post</span></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3><span id="run-server">Run server</span></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3><span id="generate-static-files">Generate static files</span></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3><span id="deploy-to-remote-sites">Deploy to remote sites</span></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+  </entry>
+  <entry>
     <title>电脑没声音怎么办？</title>
     <url>/2020/09/26/%E7%94%B5%E8%84%91%E6%B2%A1%E5%A3%B0%E9%9F%B3%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F/</url>
     <content><![CDATA[<p>首先是系统环境是适用windows 10<br>只要硬件没故障，不说百分百能解决，但是百分之七八十还是可以的<br>以下是操作方案：</p>
@@ -201,8 +139,70 @@
       </categories>
   </entry>
   <entry>
+    <title>Windows UEFI 和 Legacy 的分区</title>
+    <url>/2020/05/10/windwos_UEFI%E5%92%8CLegacy%E5%88%86%E5%8C%BA/</url>
+    <content><![CDATA[<h3><span id="uefi-和-legacy-的分区区别">UEFI 和 Legacy 的分区区别</span></h3><p>以下都是以一个硬盘，选择新建后自动生成的分区。</p>
+<blockquote>
+<h4><span id="uefi">UEFI</span></h4><p><img src="https://s1.ax1x.com/2020/05/10/Y1gnAI.png" alt></p>
+</blockquote>
+<blockquote>
+<h4><span id="legacy">Legacy</span></h4><p><img src="https://s1.ax1x.com/2020/05/10/Y1guNt.png" alt></p>
+</blockquote>
+<p>机器的引导模式是UEFI<br>若在Legacy下生成那种分区，安装完系统后则会出现No Boot的提示。如下图：<br><img src="https://s1.ax1x.com/2020/05/10/Y1RR1K.png" alt></p>
+<p>不同机器会有不同的提示。</p>
+<p>可以在虚拟机上自行测试，在物理机上测试，请备份好自己数据。</p>
+]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
+  </entry>
+  <entry>
     <title>禁用windwos Update</title>
     <url>/2020/10/05/%E7%A6%81%E7%94%A8windwos%20Update/</url>
     <content><![CDATA[<h3><span id="禁用windwos-update">禁用windwos Update</span></h3>]]></content>
+  </entry>
+  <entry>
+    <title>获取系统密钥方法</title>
+    <url>/2020/08/01/%E8%8E%B7%E5%8F%96%E7%B3%BB%E7%BB%9F%E5%AF%86%E9%92%A5%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h3><span id="操作步骤">操作步骤</span></h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1.  按Windows 徽标键 + R，弹出搜索框，输入powershell,找到Windows PowerShell，右键点击，点击以管理员身份运行它</span><br><span class="line"></span><br><span class="line">2.  复制这串代码  (Get-WmiObject -query &#39;select * from SoftwareLicensingService&#39;)              </span><br><span class="line"></span><br><span class="line">3.  在powershell窗口中，鼠标右键点击即可粘贴上，然后回车一下</span><br><span class="line"></span><br><span class="line">4.  等待几秒后，会显示出OEM的产品密钥出来</span><br><span class="line"></span><br><span class="line">5.  找到这个：OA3xOriginalProductKey：后面的25位就是OEM的产品密钥 </span><br><span class="line"></span><br><span class="line">6． 重新激活</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>hexo的安装和主题的替换</title>
+    <url>/2020/05/02/hexo%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%B8%BB%E9%A2%98%E7%9A%84%E6%9B%BF%E6%8D%A2/</url>
+    <content><![CDATA[<h3><span id="环境">环境</span></h3><p>  OS：windows 10<br>  node.js<br>  Git</p>
+<h3><span id="准备工作">准备工作</span></h3><p>安装node.js<br>安装Git<br><a href="https://hexo.io/zh-cn/docs" target="_blank" rel="noopener" title="官网链接">Hexo官网</a><br><a href="https://jingyan.baidu.com/article/d8072ac47aca0fec95cefd2d.html" target="_blank" rel="noopener">参考</a></p>
+<h3><span id="验证nodejs是否成功">验证node.js是否成功</span></h3><p>  以下命令可以验证，输入命令后，输出版本号即安装成功</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#npm -v</span></span><br><span class="line">6.13.4</span><br></pre></td></tr></table></figure>
+<div class="note info">
+            <p>info 设置npm 国内源，不然默认的是国外源，影响下载，体验不好。<br>在cmd 下，输入命令：</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm config set registry &quot;https:&#x2F;&#x2F;registry.npm.taobao.org&quot;</span><br></pre></td></tr></table></figure>
+          </div>
+
+<h3><span id="hexo的安装">Hexo的安装</span></h3><h4><span id="安装">安装</span></h4><p>终端执行命令</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli </span><br><span class="line">npm install -g hexo  //-g：global 全局安装</span><br></pre></td></tr></table></figure>
+<h4><span id="初始化">初始化</span></h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init blot //bolg 可以修改你想要的博客名字</span><br><span class="line"><span class="built_in">cd</span> blog  //切换路径，进入blog 文件夹内</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<p>开启hexo 服务器，执行命令</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo s</span><br><span class="line">以下是运行成功后的结果：</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
+<p>在游览器打开： <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a><br>停止服务器运行，按照提示，组合键：Ctrl+C。<br>运行成功后，在游览器会显示hexo 默认的主题landscape。</p>
+<h3><span id="更换主题">更换主题</span></h3><p>hexo 默认的主题是landscape，主题可以自定义。<br>到<a href="https://hexo.io/themes/" target="_blank" rel="noopener" title="主题官网">主题官网</a>上自行选择中意的主题。<br>这里选择的是<a href="https://jerryc.me/posts/21cfbf15/" target="_blank" rel="noopener" title="这里选择的是butterfly。">butterfly</a>。</p>
+<h4><span id="下载主题">下载主题</span></h4><p>到blog的主目录下。执行下面的命令</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone -b master https:&#x2F;&#x2F;github.com&#x2F;jerryc127&#x2F;hexo-theme-butterfly.git themes&#x2F;Butterfly</span><br></pre></td></tr></table></figure>
+<p>运行后，会在blog/themes下多出一个Butterfly的文件夹。</p>
+<h4><span id="应用主题">应用主题</span></h4><p>在blog的目录下找到配置文件_config.yml，<br>在文件中找到theme: landscape  修改后，theme: Butterfly。<br>这样就主题应用完成</p>
+<div class="note info">
+            <p>info 运行服务器之前，需要安装一个插件，不安装的话，会报错。</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-renderer-pug hexo-renderer-stylus</span><br></pre></td></tr></table></figure>
+          </div>
+
+<p>接下来运行服务器。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://yanming945.github.io/" target="_blank" rel="noopener" title="查看效果">查看效果</a></p>
+<p>​</p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
   </entry>
 </search>
