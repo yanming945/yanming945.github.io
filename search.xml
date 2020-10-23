@@ -200,4 +200,60 @@
         <category>hexo</category>
       </categories>
   </entry>
+  <entry>
+    <title>DELLT5820T7820T7920工作站安装win7x64的方法</title>
+    <url>/2020/10/06/DELLT5820T7820T7920%E5%B7%A5%E4%BD%9C%E7%AB%99%E5%AE%89%E8%A3%85win7x64%E7%9A%84%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<p>转载文章链接：<a href="http://www.dellgcc.com/?yingjianjiejuefangan/145.html" target="_blank" rel="noopener">http://www.dellgcc.com/?yingjianjiejuefangan/145.html</a></p>
+<blockquote>
+<p>故障现象:  第八代CPU W2102,W2123,W2133系列CPU,安装win7 （含PCIE SSD 固态硬盘）系统完整教程<br>测试环境:  T5820, 三星PCIE ssd<br>实验背景：The new Skylake CPU and chipsets have removed the legacy USB 2.0 hub， 所以第六代处理器安装WIN7 需要加载USB 3.0驱动才可以识别到U盘</p>
+</blockquote>
+<h2><span id="操作步骤">操作步骤:</span></h2><ol>
+<li>系统启动盘制作</li>
+<li>加载USB 3.0驱动</li>
+<li>更改bios 设置</li>
+<li>安装系统（加载IRST 或则 三星驱动）</li>
+</ol>
+<h2><span id="系统启动盘制作">系统启动盘制作</span></h2><p>1，下载win7 的ISO 镜像<br>2. 将U盘格式化成FAT32格式<br>3. 在系统下调出以管理员身份运行命令窗口，输入下面命令（U盘做成启动U盘的命令）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1，diskpart</span><br><span class="line">2，list disk   （显示当前磁盘个数与信息）</span><br><span class="line">3，select disk 1 （选择需要制作的U盘，根据显示的结果选择0还是1）</span><br><span class="line">4，clean （清除磁盘，类似于debug）</span><br><span class="line">5，create partition primary （创建主分区）</span><br><span class="line">6，select part 1  （选择刚才创建的分区）</span><br><span class="line">7，active        （激活为活动分区）</span><br><span class="line">输入完毕后关掉窗口</span><br></pre></td></tr></table></figure>
+<p>4，打开磁盘管理器确认是否成功？ U盘显示活动主分区，那就制作成功<br>5. 把系统镜像拷贝到U盘里面 ，解压（解压到当前文件夹）出来</p>
+<p>① 等您做完以上的操作。制作出来的U盘是legacy 引导模式的U盘， 硬盘格式 要求MBR ，F12 要选择legacy boot 下的U盘来引导<br>② 如果用户需要UEFI 模式引导的系统盘，需要做以下修改</p>
+<p>  a: 打开刚才解压出来的souce 文件夹，使用压缩软件打开里面 install.wim 文件，定位到install.wim\1\windows\boot\EFI 文件夹， 然后把bootmgfw.eif 文件拷贝到桌面，重命名为bootx64.efi</p>
+<p>  b: 把bootx64.efi文件拷贝到刚才解压出来的U盘根目录中的 boot文件夹 里面，</p>
+<p>  c:逐步打开U盘目录的EFI 文件夹，打开microsoft 把整个boot 文件拷贝出来复制到efi 文件夹下，成功界面如图，然后再把bootx64.efi 放在这个boot文件夹里面。</p>
+<p>到这里,现在的win7 U盘就支持 UEFI 引导</p>
+<h2><span id="加载usb-30-驱动">加载USB 3.0 驱动</span></h2><p>方法一 ：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1 下载windwos7USB3.0 Meida Creator 使用程序</span><br><span class="line"></span><br><span class="line">2. 下载压缩的ZIP文件，解压缩使用程序和windows中文件夹，然后以管理员身份运行installer_creator.exe文件（右键单击该文件夹，选择以管理员身份运行）</span><br><span class="line">3． 如果出现提示,选择包括Windows7的USB驱动器  要放在U盘的根目录</span><br><span class="line"></span><br><span class="line">4 .单击工具中的“创建映像”按钮以启动USB3驱动程序写入到映像。（时间比较久，成功率比较低）</span><br><span class="line">5.创建完全映像之后,就可以开始安装了.</span><br></pre></td></tr></table></figure>
+<p>方法二： 如果方法一create image 无法创建成功，可以用第二个方法</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">WIN7_Boot下载地址：http:&#x2F;&#x2F;downloads.dell.com&#x2F;FOLDER03481374M&#x2F;1&#x2F;Win7_Boot.zip</span><br><span class="line"></span><br><span class="line">1.  把U盘接入一台正常使用的电脑,然后按上面地址下载WIN7_Boot, 然后把文件解压并把WIN7_Boot这个文件夹放在U盘的根目录下.</span><br><span class="line">2. 然后右键以管理员身份运行inject_driver.exe.</span><br><span class="line">3. USB3.0驱动加载成功 会提示：操作成功完成 （大概2分钟）</span><br><span class="line">4. 完成之后在需要安装系统的机器上从U盘来启动安装.</span><br></pre></td></tr></table></figure>
+
+<h2><span id="bios-设置">BIOS  设置</span></h2><h3><span id="legacy-模式安装">Legacy 模式安装 ：</span></h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">分别更改：Secure Boot-&gt; Secure Boot Enable –&gt; 选择DIsabled</span><br><span class="line">General-&gt;Advanced Boot Options-&gt; 勾选 enabled legacy option roms</span><br><span class="line">General -&gt;Boot sequence-&gt; 选中 legacy 前面的按钮</span><br></pre></td></tr></table></figure>
+
+<h3><span id="uefi-模式安装">UEFI 模式安装</span></h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">其他两项和上面一样，只要最后一项改为General -&gt;Boot sequence-&gt; 选中 UEFI前面的按钮，即可，等安装成功后 可以再关闭。</span><br><span class="line">硬盘模式的选项，根据实际情况更改。</span><br></pre></td></tr></table></figure>
+
+<h2><span id="安装系统">安装系统</span></h2><p>1，开机看到Dell logo 选择 F12 选择 UEFI boot 中的USB 引导（根据客户实际情况选择，这里选UEFI）<br>2：在分区界面，提示缺少所需的CD/DVD 驱动器设备驱动程序。 点击浏览 (出现这个故障有2种可能，一种是认不到U盘（需要加载USB 3.0驱动），一种是认不到硬盘（加载硬盘驱动或则IRST）)<br>3 ，选择您的U盘，存放三星 pcie的驱动文件夹，选择下一步<br>4：成功加载硬盘驱动 点击下一步，<br>5：假如到这步发现下一步无法点击，点显示详细信息，会提示不能下一步的原因，这里的原因选中的磁盘具有MBR 分区表，那么在此界面 需要同时按住shift+ F10, 进入diskpart 通过命令将硬盘格式转化为GPT 即可<br>（大家简单记下，UEFI-&gt;GPT,  legacy-&gt;MBR）<br>6， 将硬盘转化为GPT 的具体命令</p>
+<p>到此，第六代处理器三星的硬盘装系统方法都已经完成。</p>
+<h2><span id="qampa">Q&amp;A</span></h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1， 假如用户的机器是非三星的，在装系统过程中 如果再次提示缺少所需的CD&#x2F;DVD 驱动器设备驱动程序。</span><br><span class="line">A: 确认usb3.0正确加载的情况下，加载IRST的驱动，类似于工作站阵列卡的添加</span><br><span class="line">下载对应的IRST驱动（需要解压）并拷贝到WIN7 U盘中。下载地址如下：</span><br><span class="line">http:&#x2F;&#x2F;downloads.dell.com&#x2F;FOLDER03707771M&#x2F;1&#x2F;Serial-ATA_Driver_PFJ82_WN32_14.8.9.1053_A06.EXE</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">2， 安装后 U盘无法识别，设备管理器显示USB 3.0驱动异常，但是鼠标键盘正常。</span><br><span class="line">A: 这个是由于客户的win7版本原因导致的，解决方案两种</span><br><span class="line">①：如果客户有配置光驱， 把机器的驱动在另外机器下载后，刻录到光盘后安装</span><br><span class="line">②：如果客户没有光驱，可以制作一个win8或则win10 PE，进入win8或则win10，通过U盘，把驱动拷贝到硬盘，重启进入系统后安装。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">3，为什么 需要加载 3.0驱动，加载 硬盘或则IRST 驱动</span><br><span class="line">A: 加载3.0驱动 是为了识别U盘， 加载IRST驱动或硬盘驱动，是为识别硬盘。</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>DELL</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>轻松创建USB启动盘</title>
+    <url>/2020/10/23/%E8%BD%BB%E6%9D%BE%E5%88%9B%E5%BB%BAUSB%E5%90%AF%E5%8A%A8%E7%9B%98/</url>
+    <content><![CDATA[<h1><span id="使用rufus-轻松创建usb启动盘">使用rufus 轻松创建USB启动盘</span></h1><h1><span id="下载rufus">下载rufus</span></h1><p>Rufus 是一个可以帮助格式化和创建可引导USB闪存盘的工具，比如 USB 随身碟，记忆棒等等。</p>
+<p>Rufus 是Ubuntu官网推荐的USB启动盘制作工具，此工具的特点：<br>* 体积小，只有几百KB （Rufus 2.17版只有945KB）<br>* 功能全<br>* 免安装，下载后可以直接使用<br>* 免费<br>* 开源Rufus 的官网： <a href="https://rufus.ie/" target="_blank" rel="noopener">https://rufus.ie</a></p>
+<p>下载地址：<a href="https://github.com/pbatard/rufus/releases/download/v3.12/rufus-3.12p.exe" target="_blank" rel="noopener">https://github.com/pbatard/rufus/releases/download/v3.12/rufus-3.12p.exe</a></p>
+<h1><span id="系统需求">系统需求：</span></h1><p>需要Windows 7以上的操作系统，无所谓32位还是64位，下载后开箱即用。</p>
+<h1><span id="用法">用法</span></h1><p>下载可执行文件后直接运行 – 无需安装，绿色环保。</p>
+<h1><span id="制作镜像">制作镜像</span></h1><p>如图选项, 依次选择”设备”, 加载”镜像”, 选择引导类型”BIOS 或 UEFI” . 点击”开始”按钮即可.**</p>
+<p><img src="https://i.loli.net/2020/10/23/DSrxIBe8huOwHR3.png" alt="Rufus.png"></p>
+]]></content>
+      <categories>
+        <category>other</category>
+      </categories>
+  </entry>
 </search>
